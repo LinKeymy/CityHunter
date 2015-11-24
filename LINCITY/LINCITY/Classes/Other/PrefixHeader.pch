@@ -1,0 +1,40 @@
+//
+//  PrefixHeader.pch
+//  LINCITY
+//
+//  Created by 林荣安 on 15/11/18.
+//  Copyright © 2015年 Family. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#import "Masonry.h"
+#import "MJExtension.h"
+#import "UIBarButtonItem+LINBarButtonItem.h"
+#import "UIView+Ex.h"
+#import "UIColor+Cate.h"
+
+#define COLORWiTH(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define LIN_GET_GLOBAL_GREEN  COLORWiTH(33,197,180)
+
+#define Scale_TopMargin 35
+#define Scale_RightMargin_Factor .14
+#define iScreen_Bounds ([UIScreen mainScreen].bounds)
+#define iScreen_Width  ([UIScreen mainScreen].bounds.size.width)
+#define iScreen_Height ([UIScreen mainScreen].bounds.size.height)
+#define zoomScale_Factor ((iScreen_Height - Scale_TopMargin * 2) / iScreen_Height)
+#define max_MoveX  (iScreen_Width - iScreen_Width * Scale_RightMargin_Factor)
+
+
+//调试
+#ifdef DEBUG
+
+#define LINLog(...) NSLog(__VA_ARGS__)
+#else
+#define LINLog(...)
+
+#endif
+
+#endif
